@@ -1,5 +1,7 @@
 package com.klt.innerclass;
 
+import com.klt.faced.PepoleSevice;
+
 /**
  * 静态成员内部类
  * 第一：静态成员内部类中可以存在static的变量和static的方法(静态成员内部类不依附于外围类)
@@ -56,7 +58,7 @@ public class StaticInnerClassDemo {
 		return "get from outter class's method";
 	}
 
-	static class StaticInnerClass{
+	static class StaticInnerClass implements PepoleSevice{
 		private static int x;
 		public void say(){
 //			System.out.println("I'm a inner class, my name is " + name+","+species+","+race+","+gender+","+age+","+grade);
@@ -73,6 +75,12 @@ public class StaticInnerClassDemo {
 			System.out.println(race);//能访问静态属性 
 //			System.out.println(name);//不能访问静态属性 
 		}
+
+		@Override
+		public void sing() {
+			System.out.println("静态成员内部类在唱歌");
+			
+		}
 	}
 	
 	
@@ -81,6 +89,7 @@ public class StaticInnerClassDemo {
 //		StaticInnerClassDemo.new StaticInnerClass().say();
 		StaticInnerClassDemo.StaticInnerClass staticInnerClass = new StaticInnerClassDemo.StaticInnerClass();
 		staticInnerClass.say();
+		staticInnerClass.sing();
 		StaticInnerClass.cry();
 	}
 }

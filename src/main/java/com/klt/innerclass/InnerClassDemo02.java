@@ -1,7 +1,4 @@
 package com.klt.innerclass;
-
-import com.klt.faced.PepoleSevice;
-
 /**
  * 成员内部类
  * 第一：成员内部类中不能存在任何static的变量和方法(成员内部类是依附于外围类的，所以只有先创建了外围类才能够创建内部类)
@@ -13,7 +10,7 @@ import com.klt.faced.PepoleSevice;
  * @author mooska
  *
  */
-public class InnerClassDemo {
+public class InnerClassDemo02 {
 	private String name;
 	private String gender;
 	private Integer age;
@@ -57,7 +54,7 @@ public class InnerClassDemo {
 		return "get from outter class's method";
 	}
 
-	class InnerClass implements PepoleSevice{
+	class InnerClass{
 		private String name;
 		private int grade;
 		
@@ -81,24 +78,18 @@ public class InnerClassDemo {
 			System.out.println("I'm a inner class, my name is " + name+","+species+","+race+","+gender+","+age+","+grade);
 			System.out.println("I'm a inner class, my name is " + name+","+species+","+race+","+gender+","+age+","+grade+" "+hello()+" "+world());
 		}
-
-		@Override
-		public void sing() {
-			System.out.println("成员内部类在唱歌");
-		}
 	}
 	
 	
 	public static void main(String[] args) {
-		InnerClassDemo demo = new InnerClassDemo();
+		InnerClassDemo02 demo = new InnerClassDemo02();
 		demo.setName("张飞");
 		demo.setAge(1800);
 		demo.setGender("男");
 		demo.race = "非洲";		
-		InnerClassDemo.InnerClass innerClass = demo.new InnerClass();
+		InnerClassDemo02.InnerClass innerClass = demo.new InnerClass();
 		innerClass.setGrade(4);
 		innerClass.say();
-		innerClass.sing();
 		
 	}
 }
