@@ -3,6 +3,9 @@ package com.klt.innerclass;
  * 成员内部类
  * 第一：成员内部类中不能存在任何static的变量和方法(成员内部类是依附于外围类的，所以只有先创建了外围类才能够创建内部类)
  * 第二：成员内部类可以访问外围类的任何属性和方法
+ * 第三：实例化成员内部类写法
+ * 			外部类  demo = new 外部类();
+ * 			外部类.内部类 innerClass = demo.new 内部类();
  * 
  * @author mooska
  *
@@ -87,5 +90,6 @@ public class InnerClassDemo {
 		InnerClassDemo.InnerClass innerClass = demo.new InnerClass();
 		innerClass.setGrade(4);
 		innerClass.say();
+		
 	}
 }
