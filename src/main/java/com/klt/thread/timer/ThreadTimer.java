@@ -4,7 +4,11 @@ import java.util.Date;
 import java.util.Timer;
 import java.util.TimerTask;
 
-
+/**
+ * 定时任务,quartz
+ * @author abc
+ *
+ */
 public class ThreadTimer {
 	private static int count = 0;
 	public static void main(String[] args) {
