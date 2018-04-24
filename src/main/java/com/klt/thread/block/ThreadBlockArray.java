@@ -5,7 +5,7 @@ import java.util.concurrent.BlockingQueue;
 
 public class ThreadBlockArray {
 	public static void main(String[] args) {
-		final BlockingQueue bq = new ArrayBlockingQueue<String>(3);
+		final BlockingQueue<String> bq = new ArrayBlockingQueue<String>(3);
 		for(int i=1;i<4;i++){
 			new Thread(new Runnable() {
 				@Override
